@@ -1,0 +1,66 @@
+[
+  {
+    "model": "app_realty.rooms",
+    "pk": 1,
+    "fields": {
+      "number": 1,
+      "description": "Комната в многокомнатной квартире"
+    }
+  },
+  {
+    "model": "app_realty.rooms",
+    "pk": 2,
+    "fields": {
+      "number": 1,
+      "description": "Отдельная комната"
+    }
+  },
+  {
+    "model": "app_realty.rooms",
+    "pk": 3,
+    "fields": {
+      "number": 1,
+      "description": "Однокомнатная квартира"
+    }
+  },
+  {
+    "model": "app_realty.rooms",
+    "pk": 4,
+    "fields": {
+      "number": 2,
+      "description": "Двухкомнатная квартира"
+    }
+  },
+  {
+    "model": "app_realty.rooms",
+    "pk": 5,
+    "fields": {
+      "number": 3,
+      "description": "Трехкомнатная квартира"
+    }
+  },
+  {
+    "model": "app_realty.rooms",
+    "pk": 6,
+    "fields": {
+      "number": 4,
+      "description": "Четырехкомнатная квартира"
+    }
+  },
+  {
+    "model": "app_realty.rooms",
+    "pk": 7,
+    "fields": {
+      "number": 4,
+      "description": "Четырехкомнатная квартира с двумя санузлами"
+    }
+  },
+  {
+    "model": "app_realty.rooms",
+    "pk": 8,
+    "fields": {
+      "number": 5,
+      "description": "Пятикомнатная квартира"
+    }
+  }
+]

@@ -1,0 +1,28 @@
+{% extends "../base.html" %}
+
+{% block title %}Изменить объявление "{{ house.title }}"{% endblock %}
+
+{% block content %}
+<h1>Изменить объявление</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    {% for item in house.foto.all %}
+        <figure class="picture">
+        <img src="{{ item.foto.url }}" height="200">
+        <figcaption>
+            <a href="{% url 'delete_foto' item.id %}">Удалить фото</a>
+        </figcaption>
+        </figure>
+    {% endfor %}
+
+    {{ foto_form.as_p }}
+    <input type="submit" value="Сохранить">
+    <a href="{% url 'my_house' %}"><input type="button" value="Отмена"></a>
+
+</form>
+
+
+{% endblock content %}

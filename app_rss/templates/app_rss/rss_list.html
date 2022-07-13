@@ -1,0 +1,14 @@
+{% extends "../base.html" %}
+
+{% block title %}Новостные каналы{% endblock %}
+
+{% block content %}
+
+<h1>Новостные каналы</h1>
+
+<ul>
+    <li><a href="{% url 'news_feed' %}"><b>Новости сайта</b></a></li>
+    <li><a href="{% url 'house_feed' %}"><b>Новые объявления</b></a></li>
+</ul>
+
+{% endblock content %}

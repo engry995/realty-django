@@ -1,0 +1,27 @@
+{% extends "../base.html" %}
+
+{% block title %}Удалить {{ house.title }}{% endblock %}
+
+{% block content %}
+
+<h1>Удалить объявление?</h1>
+
+<h2>{{ house.title }}</h2>
+
+<h3 class="price">{{ house.price|floatformat:"0g" }} руб.</h3>
+
+<p><b>Тип жилья:</b> <abbr title="{{ house.type.description }}">{{ house.type.title }}</abbr></p>
+<p><b>Комнаты:</b> <i>количество {{ house.rooms.number }}, {{ house.rooms.description }}</i></p>
+<p>{{ house.description }}</p>
+
+{% for item in house.foto.all %}
+    <img src="{{ item.foto.url }}" height="200">
+{% endfor %}
+
+<form method="post" action=".">
+    {% csrf_token %}
+    <input type="submit" value="Удалить">
+    <a href="{% url 'my_house' %}"><input type="button" value="Отмена"></a>
+</form>
+
+{% endblock content %}

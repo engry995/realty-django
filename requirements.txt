@@ -1,0 +1,4 @@
+Django==4.0.4
+django-debug-toolbar==3.5.0
+django-querycount==0.7.0
+Pillow==9.2.0

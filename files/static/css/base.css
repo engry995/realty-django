@@ -1,0 +1,144 @@
+.container {
+    width: 970px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    font-family: 'Arial', sans-serif;
+    font-style: normal;
+    text-align: left;
+    color:#333;
+}
+
+.header {
+    position: relative;
+    max-width: 100%;
+    padding: 15px;
+    background-color: rgb(0, 20, 110);
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+    font-weight: 700;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+.header a {
+    display: inline-block;
+    padding: 0 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.header_menu{
+    display: block;
+    font-size: small;
+    float: right;
+    font-style:normal;
+    text-decoration: none;
+}
+
+.header_menu a {
+    display: inline-block;
+    padding: 0 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.header_menu a:hover {
+    color: red;
+}
+
+.header_menu p {
+    margin: 0;
+    margin-top: 5px;
+    text-transform: capitalize;
+    font-size: small;
+    font-weight: 300;
+}
+
+.footer {
+    font-size: small;
+    font-style: italic;
+    color: #666;
+}
+
+.avatar {
+    height: 200px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border-right: rgb(0, 20, 110) dotted 2px;
+    border-bottom: rgb(0, 20, 110) dotted 2px;
+    border-bottom-right-radius: 30px;
+}
+
+.avatar img {
+    height: 100%;
+    float:left;
+    margin: 0 20px;
+
+}
+
+.profile label {
+    display: inline-block;
+    width: 120px;
+}
+
+.menu {
+    display: inline-block;
+    width: 140px;
+    float: left;
+    padding: 20px 0 0 5px;
+    vertical-align: top;
+}
+
+.content {
+    display: inline-block;
+    width: calc(100% - 145px);
+}
+
+.adv-list {
+     list-style-type: none;
+}
+
+.adv-item {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.action-adv {
+    padding-top: 5px;
+    border-top: #bbb solid 1px;
+}
+
+.adv-price {
+    color: #333;
+    font-style: oblique;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+/*
+
+.picture {
+    display: inline-block;
+    width: 250px;
+    margin: 0 20px 40px 20px;
+    font-size: 0;
+    text-align: center;
+}
+
+.picture img{
+    max-width: 100%;
+}
+
+.picture figcaption {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 19px 0;
+    border: 1px solid #b6b6b6;
+    border-top: none;
+    text-align: center;
+  }
+*/

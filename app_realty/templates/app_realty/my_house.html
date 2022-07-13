@@ -1,0 +1,34 @@
+{% extends "../base.html" %}
+{% load static %}
+
+{% block title %}Мои объявления{% endblock %}
+
+{% block content %}
+<h1>Мои объявления о продаже недвижимости</h1>
+
+<ul class="adv-list">
+{% for house in house_list %}
+    <li>
+        <div class="adv-item">
+            <p><b><a href="{% url 'house_detail' house.id %}">{{ house.title }}</a></b></p>
+            <p><i>Количество комнат: {{ house.rooms.number }}, {{ house.rooms.description }}</i></p>
+            <div class="foto-in-list">
+                {% for foto in house.foto.all %}
+                    <img src="{{ foto.foto.url }}" alt="Фото к {{ house.title }}" height="100">
+                {% empty %}
+                    <i> Фотографий объекта нет</i>
+                {% endfor %}
+            </div>
+            <div class="action-adv">
+                <span><b>{% if not house.actual %}НЕ о{% else %}О{% endif %}тображается на сайте</b></span>
+                <a href="{% url 'house_edit' house.id %}"><img src="{% static 'img/edit.png' %}" alt="Редактировать" height="25"></a>
+                <a href="{% url 'house_delete' house.id %}"><img src="{% static 'img/del.png' %}" alt="Удалить" height="25"></a>
+            </div>
+        </div>
+    </li>
+{% empty %}
+<li>Актуальных объявлений нет</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "../base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<h1>Объявления о продаже недвижимости</h1>
+
+<ul class="adv-list">
+{% for house in house_list %}
+    <li><div  class="adv-item">
+            <b><a href="{% url 'house_detail' house.id %}">{{ house.title }}</a></b> <i>Количество комнат: {{ house.rooms.number }}, {{ house.rooms.description }}</i>
+            <div class="foto-in-list">
+                {% for foto in house.foto.all %}
+                    <img src="{{ foto.foto.url }}" alt="Фото к {{ house.title }}" height="100">
+                {% empty %}
+                    <i> Фотографий объекта нет</i>
+                {% endfor %}
+            </div>
+            <div class="adv-price">{{ house.price|floatformat:"0g" }} руб.</div>
+        </div>
+    </li>
+{% empty %}
+<li>Актуальных объявлений нет</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

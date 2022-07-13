@@ -1,0 +1,17 @@
+{% extends "../base.html" %}
+
+{% block title %}Список новостей{% endblock %}
+
+{% block content %}
+    <h1>Новости</h1>
+    <ul>
+        {% for news in news_list %}
+            <li>
+                <b><a href="{% url 'news_view' news.id %}">{{news.title}}</a></b>
+                <small><i>От {{news.date|date:"j E Y H:i"}}</i></small>
+            </li>
+        {% empty %}
+            <li>Новостей пока нет.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

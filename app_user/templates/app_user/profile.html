@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+
+{% block title %}Профиль пользователя {{ user.username }} {% endblock %}
+
+{% block content %}
+<h1>Профиль пользователя {{ user.username }}</h1>
+
+{% if message %}
+<h3><i>{{ message }}</i></h3>
+{% endif %}
+
+
+<form action="." method="post" enctype="multipart/form-data">
+    <div class="avatar">
+        <img src="{{ user.profile.get_ava_url }}" style="max-height: 200px;">
+        <p>Чтобы сменить изображение:</p><input type="file" name="ava">
+    </div>
+
+    <div class="profile">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ profile_form.as_p }}
+        <input type="submit" value="Сохранить">
+        <input type="reset" value="Сбросить изменения">
+        <a href="{% url 'main' %}"><input type="button" value="На главную"></a>
+    </div>
+</form>
+
+{% endblock %}

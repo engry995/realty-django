@@ -1,0 +1,17 @@
+{% extends "../base.html" %}
+
+{% block title %}Добавить объект недвижимости{% endblock %}
+
+{% block content %}
+<h1>Новое объявление</h1>
+
+<form method="post" action="." enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ foto_form.as_p }}
+
+    <a href="{% url 'main' %}"><input type="button" value="Отмена"></a>
+    <input type="submit" value="Сохранить">
+</form>
+
+{% endblock content %}

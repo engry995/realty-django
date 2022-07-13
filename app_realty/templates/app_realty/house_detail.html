@@ -1,0 +1,23 @@
+{% extends "../base.html" %}
+
+{% block title %}{{ house.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ house.title }}</h1>
+
+<h3 class="price">{{ house.price|floatformat:"0g" }} руб.</h3>
+
+<p><b>Тип жилья:</b> <abbr title="{{ house.type.description }}">{{ house.type.title }}</abbr></p>
+<p><b>Комнаты:</b> <i>количество {{ house.rooms.number }}, {{ house.rooms.description }}</i></p>
+<p>{{ house.description }}</p>
+
+<div>
+    <p><b>Контактные данные:</b></p>
+    <p>Телефон: {{ house.owner.profile.phone }}, <i>{{ house.owner.profile.contact }}</i></p>
+</div>
+
+{% for item in house.foto.all %}
+    <img src="{{ item.foto.url }}" height="200">
+{% endfor %}
+
+{% endblock content %}

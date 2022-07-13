@@ -1,0 +1,11 @@
+{% extends "../base.html" %}
+
+{% block title %}Новость от {{ news.date }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ news.title }}</h1>
+<b>Новость от {{ news.date }} </b>
+<p>{{ news.text }}</p>
+
+{% endblock content %}
